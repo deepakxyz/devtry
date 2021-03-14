@@ -54,6 +54,7 @@ def create_backup():
     new_file_name = path_details['raw'] + "_backup" + path_details['ext']
     new_file_path = os.path.join(path_details['current_directory'],"ma_backup",new_file_name)
     # copy the backup file
+    om.MGlobal.displayInfo("Backup {0} created sucessuffly".format(new_file_name))
     shutil.copyfile(current_file_path,new_file_path)
 
 
