@@ -18,4 +18,4 @@ Some pipeline automation tools.
 
 ## devtry-cli
 ### devtry command line tools.
-- `tx` Convert textures in to Arnold tx files. [Visit Documentation](https://github.com/deepakxyz/devtry/blob/main/devtry-cli/README.md)
+- `tx` Convert textures in to Arnold tx files. [Visit Documentation](devtry-cli/README.md)
