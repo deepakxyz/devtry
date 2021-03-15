@@ -17,4 +17,4 @@ Some pipeline automation tools.
     - `grp "group_name" -w`
 
 ## devtry-cli
-- `tx` Convert textures in to Arnold tx files. [Visit Documentation](../devtry-cli/README.md)
+- `tx` Convert textures in to Arnold tx files. [Visit Documentation](../../devtry-cli/README.md)
