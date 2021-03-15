@@ -16,3 +16,5 @@ Some pipeline automation tools.
     - `-w` : Group and make the pivot the the world center.
     - `grp "group_name" -w`
 
+## devtry-cli
+- `tx` Convert textures in to Arnold tx files. [Visit Documentation](../devtry-cli/README.md)
