@@ -1,0 +1,65 @@
+global proc ar(string $argList){
+    // set default
+    int $suffix = false;
+    int $prefix = false;
+
+    string $argData[];
+
+    // Seprate space-delimited arguments into argument array
+    tokenize $argList " " $argData;
+
+    // delete the frist element to pass it into the switch
+    // stringArrayRemoveAtIndex(0, $argData);
+
+    for($arg in $argData){
+        switch ($arg){
+            case "-s":
+            $suffix = true;
+            break;
+            case "-p":
+            $prefix = true;
+            break;
+            
+            
+        }
+    }
+    
+
+    string $name = $argData[0];
+    string $prefix_value="";
+    string $suffix_value="";
+    
+    // configure the name
+    if($suffix){
+        // get suffix value
+        int $suffix_index = stringArrayFind("-s",0,$argData);
+        $suffix_value = "_" + $argData[$suffix_index +  1];
+    }
+    
+    if($prefix){
+        // get suffix value
+        int $prefix_index = stringArrayFind("-p",0,$argData);
+        $prefix_value = $argData[$prefix_index + 1] + "_";
+    }
+    
+    string $newName;
+    // Debug print
+    // print("name: " + $name + "\n");
+    // print("prefix: " + $prefix_value + "\n");
+    // print("suffix: " + $suffix_value + "\n");
+    
+    // get all the selection
+    string $selection[] = `ls -sl`;
+    int $i = 1;
+    for($object in $selection){
+        
+        if (size($selection)== 1){
+            $newName = $prefix_value + $name + $suffix_value;
+            rename $newName;
+        } else {
+            $newName = $prefix_value + $name + "_" + $i + $suffix_value;
+            rename $newName;
+            $i = $i + 1;
+        }
+    }
+}

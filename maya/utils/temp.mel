@@ -1,0 +1,29 @@
+global proc ar(string $argList){
+    // set default
+    int $suffix = false;
+    int $prefix = false;
+
+    string $argData[];
+
+    // Seprate space-delimited arguments into argument array
+    tokenize $argList " " $argData;
+    string $new_argData[] = $argData;
+
+    // delete the frist element to pass it into the switch
+    stringArrayRemoveAtIndex(0, $argData);
+
+    for($arg in $argData){
+        switch ($arg){
+            case "-s":
+            $suffix = true;
+            case "-p":
+            $preffix = true;
+            case "":
+            break
+            default:
+            print("Nope");
+        }
+    }
+
+    print($suffix, $preffix);
+}
