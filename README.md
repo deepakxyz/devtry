@@ -12,4 +12,7 @@ Some pipeline automation tools.
     - `-p` : Add prefix
     - `-s` : Add suffix
     - `Sphere -p prefix -s suffix` -> RESULT: `prefix_Sphere_suffix`
+- `grp.py` : Shorthand group command.
+    - `-w` : Group and make the pivot the the world center.
+    - `grp "group_name" -w`
 
