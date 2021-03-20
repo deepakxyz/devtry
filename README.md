@@ -16,6 +16,15 @@ Some pipeline automation tools.
 - `grp.py` : Shorthand group command.
     - `-w` : Group and make the pivot the the world center.
     - `grp "group_name" -w`
+- `zero_out.py`: Zero Out the attributes
+    - `zot` : Zero out the translation
+    - `zor` : Zero out the rotation
+    - `zos` : Zero out the scale
+    - `zo`  : Zero out translation, roation and scale
+    - `zoa` : Zero out with arguments:
+        - `-t` : tranlation
+        - `-r` : rotation
+        - `s` : scale
 
 ## devtry-cli
 ### devtry command line tools.
