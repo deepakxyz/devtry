@@ -1,0 +1,84 @@
+// zero out translation
+global proc zot(){
+    // selection
+    string $selection[] = `ls -sl`;
+    for ($object in $selection){
+        // zero out the translation
+        setAttr ($object + ".translateX") 0;
+        setAttr ($object + ".translateY") 0;
+        setAttr ($object + ".translateZ") 0;
+    }
+}
+
+// zero out scale
+global proc zor(){
+    // selection
+    string $selection[] = `ls -sl`;
+    for ($object in $selection){
+        setAttr ($object + ".rotateX") 0;
+        setAttr ($object + ".rotateY") 0;
+        setAttr ($object + ".rotateZ") 0;
+    }
+}
+
+// zero out scale
+global proc zos(){
+    // selection
+    string $selection[] = `ls -sl`;
+    for ($object in $selection){
+        setAttr ($object + ".scaleX") 1;
+        setAttr ($object + ".scaleY") 1;
+        setAttr ($object + ".scaleZ") 1;
+    }
+}
+
+// zero out translation, rotation, scale
+global proc zo(){
+    zot;
+    zor;
+    zos;
+}
+
+
+global proc zoa(string $argList){
+    // set default
+    int $translation = false;
+    int $rotation = false;
+    int $scale = false;
+    
+    string $argData[];
+    
+    // seprate space-delimited aruguments into arguments array
+    tokenize $argList " " $argData;
+    
+    // change the default data from the argument.
+    for ($arg in $argData){
+        switch ($arg){
+            case "-t":
+            $translation = true;
+            case "-r":
+            $rotation = true;
+            case "-s":
+            $scale = true;
+        }
+    }
+    // get all the seeltion object
+    string $selection[] = `ls -sl`;
+    
+    // if argumnt is none
+    if ($translation == false && $rotation == false && $scale == false){
+        zo;
+    }
+
+    if ($translation == true){
+        zot;
+    }
+    
+    if ($rotation == true){
+        zor;
+    }
+    
+    if ($scale == true){
+        zos;
+    }
+}
