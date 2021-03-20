@@ -1,0 +1,20 @@
+// create a toon shader
+global proc toon(){
+    createAndAssignShader aiToon "";
+}
+
+// attach the toon shader to the ramp
+global proc attach(){
+    // create my shader
+    //createAndAssignShader aiToon "";
+
+    // select the shader
+    string $myToonSel[] = `ls -sl`;
+
+    string $rampNode = "myRamp";
+    // set base material
+    setAttr ($myToonSel[0] + ".base") 1;
+    connectAttr ($rampNode + ".outColor") ($myToonSel[0] + ".baseTonemap");
+}
+
+toon;
