@@ -204,23 +204,24 @@ global proc zoa(string $argList){
     tokenize $argList " " $argData;
     
     // change the default data from the argument.
+    
     for ($arg in $argData){
         switch ($arg){
             case "-t":
             $translation = true;
+            break;
             case "-r":
             $rotation = true;
+            break;
             case "-s":
             $scale = true;
+            break;
         }
     }
+    
     // get all the seeltion object
     string $selection[] = `ls -sl`;
-    
-    // if argumnt is none
-    if ($translation == false && $rotation == false && $scale == false){
-        zo;
-    }
+
 
     if ($translation == true){
         zot;
@@ -234,8 +235,3 @@ global proc zoa(string $argList){
         zos;
     }
 }
-
-
-
-
-
