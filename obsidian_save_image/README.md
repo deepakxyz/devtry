@@ -1,0 +1,3 @@
+- Copy the data from the clipboard
+- Screen shot is done in [lightshot](https://app.prntscr.com/en/index.html)
+- Put the templates file in the obsidian directory.

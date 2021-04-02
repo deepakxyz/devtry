@@ -4,10 +4,13 @@
 import os
 import shutil
 import time
+import random
 
 # maya
 import maya.cmds as mc
 import maya.OpenMaya as om
+
+
 
 def path_name():
     # current file path

@@ -31,6 +31,5 @@ def main():
     except:
         print("No command found.")
 
-
 if __name__ == '__main__':
     main()

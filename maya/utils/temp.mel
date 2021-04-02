@@ -1,5 +1,5 @@
 global proc ar(string $argList){
-    // set default
+:    // set default
     int $suffix = false;
     int $prefix = false;
 
@@ -27,3 +27,4 @@ global proc ar(string $argList){
 
     print($suffix, $preffix);
 }
+
