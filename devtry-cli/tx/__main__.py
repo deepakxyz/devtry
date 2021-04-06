@@ -2,6 +2,11 @@ import sys
 import os
 from .txmake import txmake, test
 
+HELP_CMD = '''
+tx --help -h                List all the available commands
+tx run                      Convert all the texture to to tx
+'''
+
 def main():
     args = sys.argv[1:]
     try:
@@ -26,6 +31,9 @@ def main():
             except:
                 print("Running over all files")
                 txmake()
+        
+        if args[0] == "--help" or args[0] == "-h":
+            print(HELP_CMD)
 
                 
     except:
