@@ -1,7 +1,41 @@
 // All the mel command for the shelf tool
+global proc h(){
+    print("hi Selection Hirarchy \n");
+    print("i Import \n");
+    print("e Export \n");
+    print("ae Alembic Export Selection \n");
+    print("jo Comet Joint Orient \n");
+    print("rn Comet Rename \n");
+    print("se Script Editor \n");
+    print("cp Center Pivot \n");
+    print("l Space Locator \n");
+    print("ft Freeze Tranformation \n");
+    print("re Rename \n");
+    print("grp Group \n");
+    print("zo zot zor zos Zero Out \n");
+    print("snap Snap to the First selected object \n");
+    print("toCurve Convert a selected edge to Nurbs Curve \n");
+
+}
+
 // Select hierarchy
 global proc hi(){
     select -hi;
+}
+
+// Import
+global proc i(){
+	Import;
+}
+
+// Export Selection 
+global proc e(){
+	ExportSelection;
+}
+
+// AlembicExportSelection
+global proc ae(){
+	AlembicExportSelection;
 }
 
 
@@ -9,7 +43,6 @@ global proc hi(){
 global proc jo(){
     cometJointOrient;
 }
-
 
 
 // Commet Rename
@@ -31,7 +64,7 @@ global proc cp(){
 
 
 // Space Locator
-global proc sl(){
+global proc l(){
     spaceLocator;
 }
 
@@ -204,8 +237,7 @@ global proc zoa(string $argList){
     // seprate space-delimited aruguments into arguments array
     tokenize $argList " " $argData;
     
-    // change the default data from the argument.
-    
+    // change the default data from the argument
     for ($arg in $argData){
         switch ($arg){
             case "-t":
@@ -220,6 +252,7 @@ global proc zoa(string $argList){
         }
     }
     
+
     // get all the seeltion object
     string $selection[] = `ls -sl`;
 
@@ -235,4 +268,22 @@ global proc zoa(string $argList){
     if ($scale == true){
         zos;
     }
+}
+
+/// snap to the first selected object
+global proc snap(){
+    string $selection[] = `ls -sl`;
+    string $snapTo = $selection[0];
+    stringArrayRemoveAtIndex(0, $selection);
+
+    for ($i in $selection){
+        delete `parentConstraint $snapTo $i`;
+
+    }
+}
+
+
+///Convert Edge to Curve
+global proc toCurve(){
+    polyToCurve -form 3- degree 3 -conformToSmoothMeshPreview 1;
 }
