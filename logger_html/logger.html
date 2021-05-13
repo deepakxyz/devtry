@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="wrapper">
+        <div class="ERROR vistoggle">
+            <a href="javascript: toggleVisibilityByClass('ERROR')">hide ERROR</a>
+        </div>
+        <div class="ERROR vistoggle" style="display:none;">
+            <a href="javascript: toggleVisibilityByClass('ERROR')">show ERROR</a>
+        </div>
+<!-- <div class="HELP vistoggle"><a href="javascript: toggleVis('HELP')">show HELP</a></div><div class="HELP vistoggle" style="display:none;"><a href="javascript: toggleVis('HELP'">hide HELP</a></div> -->
+<div class="HELP vistoggle"><a href="javascript: toggleVis('HELP')">hide DETAILED</a></div><div class="HELP vistoggle" style="display:none;"><a href="javascript: toggleVisibilityByClass('DETAILED')">show DETAILED</a></div>
+
+   </div>
+    <br><br>
+    <div class="INFO line"><div>23:00:16   1186MB INFO:         </div><div>Redshift for Maya 2022
+    </div></div>
+    <div class="INFO line"><div>23:00:16   1186MB INFO:         </div><div>Version 3.0.45, Apr 27 2021
+    </div></div>
+    <div class="DETAILED line"><div>23:00:16   1186MB DETAILED:     </div><div>Plugin filename: C:\ProgramData\Redshift\Plugins\Maya\2022\nt-x86-64\redshift4maya.mll
+    </div></div>
+    <div class="DETAILED line"><div>23:00:16   1186MB DETAILED:     </div><div>Plugin path: C:\ProgramData\Redshift\Plugins\Maya\2022\nt-x86-64
+    </div class="ERROR line">Hello</div>
+    <script src="script.js"></script>
+</body>
+</html>

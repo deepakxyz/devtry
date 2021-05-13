@@ -1,0 +1,44 @@
+:root {
+  --background-color:#040404;
+  --black:#4f4f4f;  
+  --red:#ff6c60;
+  --green: #5a6188;
+  --yellow: #ffffb6;
+  --blue: #96cbfe;
+  --purple: #ff73fd;
+  --cyan: #c6c5fe;
+  --white: #eeeeee;
+  --brightBlack: #7c7c7c;
+  --brightRed: #ffb6b0;
+  --brightGreen: #ceffac;
+  --brightYellow: #ffffcc;
+  --brightBlue: #b5dcff;
+  --brightPurple: #ff9cfe;
+  --brightCyan: #dfdffe;
+  --brightWhite: #ffffff;
+  --background: #000000;
+  --foreground: #bbbbbb;
+  --selectionBackground: #363983;
+  --cursorColor: #ffa560;
+}
+
+body {
+    margin:10px;
+    padding: 0px;
+    font-size: 12px;
+	font-family: "Lucida Sans Unicode", Monaco, lucida, helvetica, sans-serif;
+    background-color:var(--background-color);
+    color: var(--white);
+}
+
+a {
+    border:none;
+    color:var(--brightGreen);
+
+}
+
+div {
+    float:left;
+    font-size:12px;
+    font-family: courier,monospace;
+}
