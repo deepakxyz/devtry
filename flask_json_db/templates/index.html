@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Json shift</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div >
+
+        <h1>Json Shift</h1> 
+       
+        <form class="form" action="/" method="POST">
+           <div class="input-value">
+               <span class="details">Shot Name</span>
+               <input type="text" name='shotname' id='shotname'>
+           </div>
+           <div class="input-value">
+               <span class="details">Shot Content</span>
+               <textarea rows="4" cols="50" name='shotcontent' id='shotcontent'></textarea>
+           </div>
+           <div class="input-value">
+               <span class="details">Insert</span>
+               <input type="checkbox" name="insert" id='insert'>
+           </div>
+           <div class="input-value">
+               <span class="details">Before</span>
+               <input type="radio" name="where" value="before">
+            </div>
+            <div class="input-value">
+               <span class="details">After</span>
+               <input type="radio" name="where" value="after">
+           </div>
+           <div class="input-value">
+               <span class="details">Shot Name</span>
+                <select name="shot" id="shot">
+                    
+                    {% for shot in data['shows']%}
+                    <option value={{shot['name']}}>{{shot['name']}}</option>
+                        {{shot}}
+                    {% endfor %}
+                </select>
+           </div>
+           <div class="input-value">
+               <input type="submit" value="submit"/>
+           </div>
+        </form>
+        <hr>
+        <h2>Content</h2>
+        <div class="shots">
+            {% for shots in data['shows']%}
+            <div class="shot">
+                <a href="/shot/{{shots['id']}}">
+                <h3>
+                {{shots['name']}}
+                </h3></a>
+                <p>{{shots['content']}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
